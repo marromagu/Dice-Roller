@@ -4,10 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.diceroller.ui.theme.DiceRollerTheme
@@ -17,14 +16,24 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             DiceRollerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-
-                }
+                DiceRollerApp()
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun DiceRollerApp() {
+    DiceWithButtonAndImage()
+}
+
+@Composable
+fun DiceWithButtonAndImage(
+    modifier: Modifier = Modifier
+        .fillMaxSize()//fillMaxSize utiliza toda la pantalla
+        .wrapContentSize(Alignment.Center)//para centrar en el centro xd
+) {//Modifier es un objeto que decora la IU
+
+
 }
